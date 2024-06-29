@@ -23,7 +23,7 @@ body {
     max-width: 800px;
 }
 
-/* 标题样式 */
+
 .title {
     font-family: 'Google Sans', sans-serif;
     font-weight: bold;
@@ -96,17 +96,3 @@ body {
     height: auto;
 }
 
-/* 媒体查询，用于响应式设计 */
-@media (max-width: 600px) {
-    .title {
-        font-size: 1.8em;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    .buttons a, .link-block a {
-        padding: 8px 15px;
-    }
-}
