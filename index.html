@@ -1,40 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="keywords" content="Robotics, Reinforcement Learning, Large Language Model">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RLingua: Task-Oriented Adaptive Learning of Robot Manipulation Skills</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <meta charset="utf-8">
+    <meta name="keywords" content="Robotics, Transfer Learning, Reinforcement Learning, Large Language Model">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task-Oriented Adaptive Learning of Robot Manipulation Skills</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 20px;
+        }
+        .title {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .authors {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .authors .author {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .affiliations {
+            font-size: 1em;
+            color: gray;
+        }
+        .contact {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            margin: 5px;
+        }
+        .buttons a:hover {
+            background-color: #555;
+        }
+        .publication-links .link-block {
+            display: inline-block;
+            margin: 5px;
+        }
+        .publication-links a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+        .publication-links a:hover {
+            background-color: #555;
+        }
+        .hero .subtitle {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        .hero figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-    gtag('js', new Date());
+        gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <!-- <link rel="stylesheet" href="./static/css/fontawesome.all.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="static/images/LOGO_small.png" type="image/x-icon">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <!-- <link rel="stylesheet" href="./static/css/fontawesome.all.min.css"> -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="static/image/github-mark.png" type="image/x-icon">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
 </head>
 <body>
 <section class="hero">
