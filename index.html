@@ -1,67 +1,564 @@
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task-Oriented Adaptive Learning of Robot Manipulation Skills</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  
+  <meta name="keywords" content="Robotics, Reinforcement Learning, Large Language Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RLingua: Improving Reinforcement Learning Sample Efficiency in Robotic Manipulations With Large Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <!-- <link rel="stylesheet" href="./static/css/fontawesome.all.min.css"> -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="static/images/LOGO_small.png" type="image/x-icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Task-Oriented Adaptive Learning of Robot Manipulation Skills</h1>
-    </header>
-    <nav>
-        <a href="#home">主页</a>
-        <a href="#about">关于</a>
-        <a href="#contact">联系</a>
-    </nav>
-    <main>
-        <h2>主页</h2>
-        <p>这是一个简单的HTML模板。你可以根据需要进行修改和扩展。</p>
-    </main>
-    <footer>
-        <p>版权所有 &copy; 2024 我的网站</p>
-    </footer>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="http://research.baidu.com/Research_Areas/index-view?id=58">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://vihe-3d.github.io/">
+            VIHE
+          </a>
+          <a class="navbar-item" href="https://sites.google.com/view/rt-grasp">
+            RT-Grasp
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">RLingua: Improving Reinforcement Learning
+            Sample Efficiency in Robotic Manipulations
+            With Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=PbRnq68AAAAJ&hl=en">Liangliang Chen</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://doublelei.me/">Yutian Lei</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=GdYgso8AAAAJ&hl=en">Shiyu Jin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ece.gatech.edu/directory/ying-zhang">Ying Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.unc.edu/~zlj/">Liangjun Zhang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Baidu RAL,</span>
+            <span class="author-block"><sup>2</sup>Georgia Institute of Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2403.06420.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="static/docs/IEEE_RAL_appendix.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Appendix</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure>
+        <a href="static/images/algorithm_architecture-1.png"><img src="static/images/algorithm_architecture-1.png" width="900px"></a>
+      </figure>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">RLingua</span> combines LLM knowledge and RL for high-performance control
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-two-thirds">
+    <h2 class="title is-3">Video</h2>
+    <video id="dollyzoom" autoplay controls muted allowfullscreen height="100%">
+      <source src="./static/videos/RLingua_video_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Reinforcement learning (RL) has demonstrated its capability in solving various tasks but is notorious for its low sample efficiency. In this paper, we propose RLingua, a framework that can leverage the internal knowledge of large language models (LLMs) to reduce the sample complexity of RL in robotic manipulations. To this end, we first present a method for extracting the prior knowledge of LLMs by prompt engineering so that a preliminary rule-based robot controller for a specific task can be generated in a user-friendly manner. Despite being imperfect, the LLM-generated robot controller is utilized to produce action samples during rollouts with a decaying probability, thereby improving RL's sample efficiency. We employ TD3, the widely-used RL baseline method, and modify the actor loss to regularize the policy learning towards the LLM-generated controller. RLingua also provides a novel method of improving the imperfect LLM-generated robot controllers by RL. We demonstrated that RLingua can significantly reduce the sample complexity of TD3 in four robot tasks of panda_gym and achieve high success rates in 12 sampled sparsely rewarded robot tasks in RLBench, where the standard TD3 fails. Additionally, We validated RLingua's effectiveness in real-world robot experiments through Sim2Real, demonstrating that the learned policies are effectively transferable to real robot tasks.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="static/videos/single.avi"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title">Panda Gym Experiments</h3>
+    <div class="columns is-centered">
+
+      
+
+      <!-- Matting. -->
+      <div class="column">
+        <h4 class="title is-4">Reach</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/PandaReach.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <h4 class="title is-4">Push</h4>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/PandaPush.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <h4 class="title is-4">Pick & Place</h4>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/PandaPickAndPlace.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <h4 class="title is-4">Slide</h4>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/PandaSlide.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+   
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title">RLbench Experiments</h3>
+
+    <h5 class="title is-4">Push Button</h5>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/push_button_1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">   
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/push_button_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/push_button_3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/push_button_4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    
+    <h5 class="title is-4">Meat off Grill</h5>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/meat_off_grill_1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">   
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/meat_off_grill_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/meat_off_grill_3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/meat_off_grill_4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="title is-4">Close Jar</h5>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/close_jar_1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">   
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/close_jar_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/close_jar_3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/close_jar_4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="title is-4">Slide Block to Target</h5>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/slide_block_to_target_1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">   
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/slide_block_to_target_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/slide_block_to_target_3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/slide_block_to_target_4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+   
+    <h5 class="title is-4">Put Item in Container</h5>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/put_item_in_container_1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">   
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/put_item_in_container_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/put_item_in_container_3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/put_item_in_container_4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="title is-4">Take Lid off Saucepan</h5>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/take_lid_off_saucepan_1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">   
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/take_lid_off_saucepan_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/take_lid_off_saucepan_3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/take_lid_off_saucepan_4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title">Real-World Experiments</h3>
+    <div class="columns is-centered">
+
+      
+
+      <!-- Matting. -->
+      <div class="column">
+        <h3 class="title is-4">Pick & Place</h3>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Utilizing the Sim2Real approach, the policies learned by <i>RLingua</i> show high transferability to real-world robot scenarios, especially in robot pick and place tasks.
+            </p>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/single.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">External Interference</h3>
+          <p>
+            By continuously receiving real-time data from perceptual models, the learned policies can predict the current optimal actions, thus ensuring robustness against external interference.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/invention.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">Long Horizon</h3>
+          <p>
+            By altering the state of the target object and utilizing straightforward control logic, <i>RLingua</i> is also adept at performing long-horizon, complex tasks.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/BAIDU.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+   
+  </div>
+</section>
+
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> 
+
 </body>
 </html>
-
