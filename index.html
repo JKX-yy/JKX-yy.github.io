@@ -127,7 +127,7 @@
         <h2 class="title is-3" align="center"> Abstract </h2>
         <div class="content has-text-justified">
           <p>
-            The robot's operating environment and tasks are dynamically changing. Therefore, developing a mechanism that can infer other things from one fact to adapt to various scenarios is crucial for enhancing the robot's adaptive capabilities.  This paper proposes a general Intelligent Transfer System (ITS) to enable rapid skill learning for robots in dynamic tasks.ITS is an advanced  system that integrates Large Language Models (LLMs) with human intelligence. It is capable of comprehending new and previously unseen task instructions and automatically generating a process-oriented reward function for these task. In addition, we have designed an Intelligent Transfer Network (ITN) within the ITS. ITN focuses on basic skills and aims to quickly learn complex new tasks by intelligently integrating features of these basic skills. This paper's method holds promise for enabling robots to independently solve entirely new operational tasks. We conducted a series of evaluations in a simulation environment, and the experimental results show that our method improves the time efficiency of two major tasks by 72.22% and 65.86%, respectively, compared with learning from scratch. Additionally, we compare our method with several outstanding works in the field. 
+            The robot's operating environment and tasks are dynamically changing. Therefore, developing a mechanism that can infer other things from one fact to adapt to various scenarios is crucial for enhancing the robot's adaptive capabilities.  This paper proposes a general Intelligent Transfer System (ITS) to enable rapid skill learning for robots in dynamic tasks.ITS is an advanced  system that integrates Large Language Models (LLMs) with human intelligence. It is capable of comprehending new and previously unseen task instructions and automatically generating a process-oriented reward function for these task. In addition, we have designed an Intelligent Transfer Network (ITN) within the ITS. ITN focuses on basic skills and aims to quickly learn complex new tasks by intelligently integrating features of these basic skills. This paper's method holds promise for enabling robots to independently solve entirely new operational tasks. We conducted a series of evaluations in a simulation environment, and the experimental results show that our method improves the time efficiency of two major tasks by  <b>72.22%</b> and <b>65.86%</b>, respectively, compared with learning from scratch. Additionally, we compare our method with several outstanding works in the field. 
           </p>
         </div>
       </div>
@@ -138,9 +138,12 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h3 class="title">Panda Gym Experiments</h3>
+      <p style="font-size: 125%">
+    In this demo, we visualize the unmodified best Eureka reward
+    for each environment and the policy trained using this reward. Our environment suite spans 10 robots and 29 distinct tasks across two 
+    open-sourced benchmarks, Isaac Gym (Isaac) and Bidexterous Manipulation (Dexterity).
+</p>
     <div class="columns is-centered">
-
-      
 
       <!-- Matting. -->
       <div class="column">
@@ -190,7 +193,11 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h3 class="title">RLbench Experiments</h3>
-
+    <p style="font-size: 125%">
+        In this demo, we visualize the unmodified best Eureka reward
+        for each environment and the policy trained using this reward. Our environment suite spans 10 robots and 29 distinct tasks across two 
+        open-sourced benchmarks, Isaac Gym (Isaac) and Bidexterous Manipulation (Dexterity).
+    </p>
     <h5 class="title is-4">Push Button</h5>
     <div class="columns is-centered">
       <div class="column">
