@@ -71,16 +71,16 @@
         <div class="contact">
             <p>Corresponding authors: <a href="mailto:jkx983008880@163.com">jkx983008880@163.com</a>, <a href="mailto:g.h.tian@sdu.edu.cn">g.h.tian@sdu.edu.cn</a></p>
         </div>
+        
         <div class="buttons">
             <a href="https://arxiv.org" target="_blank">arXiv</a>
             <a href="https://github.com/JKX-yy/JKX-yy.github.io/blob/main/ieeeconf__%E7%AC%AC%E4%B8%89%E7%89%88%E8%8B%B1%E6%96%87___8%E9%A1%B5_.pdf" target="_blank">PDF</a>
             <a href="https://github.com/JKX-yy/ITN" target="_blank">Code</a>
         </div>
+        
     </div>
       <div class="column has-text-centered">
         <div class="publication-links">
-          <!-- PDF Link. -->
-          
           <span class="link-block">
             <a href="https://arxiv.org/pdf/2403.06420.pdf"
                class="external-link button is-normal is-rounded is-dark">
@@ -90,7 +90,6 @@
               <span>arXiv</span>
             </a>
           </span>
-          <!-- Code Link. -->
           <span class="link-block">
             <a href=""
                class="external-link button is-normal is-rounded is-dark">
@@ -100,7 +99,6 @@
               <span>Code (Coming Soon)</span>
               </a>
           </span>
-    
           <span class="link-block">
             <a href="static/docs/IEEE_RAL_appendix.pdf"
                class="external-link button is-normal is-rounded is-dark">
@@ -111,11 +109,134 @@
             </a>
           </span>
         </div>
-    
       </div>
-    
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure>
+        <a href="https://github.com/JKX-yy/ITN/blob/main/images/ITS.png"><img src="https://github.com/JKX-yy/ITN/blob/main/images/ITS.png" width="900px"></a>
+      </figure>
+      <h2 class="subtitle has-text-centered">
+         Task-Oriented Adaptive Learning of Robot Manipulation Skills
+      </h2>
+    </div>
+  </div>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" align="center"> Abstract </h2>
+        <div class="content has-text-justified">
+          <p>
+            The robot's operating environment and tasks are dynamically changing. Therefore, developing a mechanism that can infer other things from one fact to adapt to various scenarios is crucial for enhancing the robot's adaptive capabilities.  This paper proposes a general Intelligent Transfer System (ITS) to enable rapid skill learning for robots in dynamic tasks.ITS is an advanced  system that integrates Large Language Models (LLMs) with human intelligence. It is capable of comprehending new and previously unseen task instructions and automatically generating a process-oriented reward function for these task. In addition, we have designed an Intelligent Transfer Network (ITN) within the ITS. ITN focuses on basic skills and aims to quickly learn complex new tasks by intelligently integrating features of these basic skills. This paper's method holds promise for enabling robots to independently solve entirely new operational tasks. We conducted a series of evaluations in a simulation environment, and the experimental results show that our method improves the time efficiency of two major tasks by 72.22% and 65.86%, respectively, compared with learning from scratch. Additionally, we compare our method with several outstanding works in the field. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 align="center">Basic Skills</h2>
+<div align="center">
+  <table style="border: none; border-collapse: collapse; width: 100%;">
+    <tr>
+      <td style="border: none; text-align: center;">
+        <h4>Pick</h4>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutbolt_20.gif" alt="Reach" width="240" height="207">
+      </td>
+      <td style="border: none; text-align: center;">
+        <h4>Place</h4>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutbolt_20.gif" alt="Push" width="240" height="207">
+      </td>
+      <td style="border: none; text-align: center;">
+        <h4>Screw</h4>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutbolt_20.gif" alt="Pick & Place" width="240" height="207">
+      </td>
+      <td style="border: none; text-align: center;">
+        <h4>Insert</h4>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutbolt_20.gif" alt="Pick & Place" width="240" height="207">
+      </td>
+    </tr>
+  </table>
+</div>
+
+<h2 align="center">Complex Skills</h2>
+<div align="center">
+  <table style="border: none; border-collapse: collapse; width: 100%;">
+    <tr style="border: none;">
+      <td align="center" style="border: none;">
+        <h5>NutBolt_PickPlace_m20</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutbolt_20.gif" alt="Reach" width="240" height="207">
+      </td>
+      <td align="center" style="border: none;">
+        <h5>NutBolt_PickPlace_m16</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutbolt_20.gif" alt="Push" width="240" height="207">
+      </td>
+      <td align="center" style="border: none;">
+        <h5>NutBolt_PickPlace_m14</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutbolt_20.gif" alt="Pick & Place" width="240" height="207">
+      </td>
+    </tr>
+  </table>
+
+  <table style="border: none; border-collapse: collapse; width: 100%;">
+    <tr style="border: none;">
+      <td align="center" style="border: none;">
+        <h5>PegHole_PickPlaceInsert_round16mm</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/rec_peghole_pickplaceinsert20246281136244.gif" alt="Reach" width="240" height="207">
+      </td>
+      <td align="center" style="border: none;">
+        <h5>PegHole_PickPlaceInsert_round20mm</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/round_peghole_pickplaceinsertyon20246281137175.gif" alt="Push" width="240" height="207">
+      </td>
+      <td align="center" style="border: none;">
+        <h5>PegHole_PickPlaceInsert_round14mm</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutboltm20.gif" alt="Pick & Place" width="240" height="207">
+      </td>
+    </tr>
+  </table>
+
+  <table style="border: none; border-collapse: collapse; width: 100%;">
+    <tr style="border: none;">
+      <td align="center" style="border: none;">
+        <h5>PegHole_PickPlaceInsert_rect16mm</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/rec_peghole_pickplaceinsert20246281136244.gif" alt="Reach" width="240" height="207">
+      </td>
+      <td align="center" style="border: none;">
+        <h5>PegHole_PickPlaceInsert_rect20mm</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/round_peghole_pickplaceinsertyon20246281137175.gif" alt="Push" width="240" height="207">
+      </td>
+      <td align="center" style="border: none;">
+        <h5>PegHole_PickPlaceInsert_rect14mm</h5>
+        <img src="https://github.com/JKX-yy/Eureka-jkx/blob/main/images/nutboltm20.gif" alt="Pick & Place" width="240" height="207">
+      </td>
+    </tr>
+  </table>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>   
 </body>
 
-
-    
 </html>
