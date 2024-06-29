@@ -1,0 +1,112 @@
+/* index.css */
+
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 容器样式 */
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+/* 标题样式 */
+.title {
+    font-family: 'Google Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* 作者样式 */
+.authors {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.authors .author {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* 子元素样式 */
+.author span {
+    color: green;
+}
+
+/* 附属样式 */
+.affiliations {
+    font-size: 1em;
+    color: gray;
+}
+
+/* 联系方式样式 */
+.contact {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+/* 按钮样式 */
+.buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    margin: 5px;
+}
+
+.buttons a:hover {
+    background-color: #555;
+}
+
+/* 链接样式 */
+.link-block a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    margin: 5px;
+    display: inline-block;
+}
+
+.link-block a:hover {
+    background-color: #555;
+}
+
+/* 图像样式 */
+.hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 媒体查询，用于响应式设计 */
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.8em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .buttons a, .link-block a {
+        padding: 8px 15px;
+    }
+}
