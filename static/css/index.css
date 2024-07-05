@@ -1,7 +1,9 @@
 body {
   font-family: 'Noto Sans', sans-serif;
-   background-color: white; 
+  background-color: white;
+  color: black; /* 设置字体颜色为黑色 */
 }
+
 
 
 
