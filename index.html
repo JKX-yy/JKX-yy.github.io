@@ -590,10 +590,7 @@
         style="display: block; margin-left: auto; margin-right: auto" />
     <br>
     <span style="font-size: 125%">
-        <span style="font-weight: bold"> Our (ITN) method excels in the early and middle stages, </span> achieving initial success rates of 86.64\% and 79.56\% in two tasks, significantly higher than the other methods.  As training progresses, success rates of all methods rise,but ITN achieves higher success rates at an earlier stage ,demonstrating superior time efficiency and success rate.  The method is highly anticipated for its practical value. 
-    </span>
-    <br>
-  <br>
+        <span style="font-weight: bold"> Our (ITN) method excels in the early and middle stages, </span> achieving initial success rates of 86.64\% and 79.56\% in two tasks, significantly higher than the other methods. As training progresses, success rates of all methods rise,but ITN achieves higher success rates at an earlier stage ,demonstrating superior time efficiency .  The method is highly anticipated for its practical value. 
         <br>
     <h4 class="title" >Other Experiment</h4>
         <br>
@@ -602,15 +599,16 @@
         style="display: block; margin-left: auto; margin-right: auto" />
     <br>
     <span style="font-size: 125%">
-        <span style="font-weight: bold"> Several methods of transfer learning significantly outperform direct learning. </span> Although FAST performs best in early training by selecting data closer to the target domain to initializes the policy,  it is surpassed by ITN after a few dozen  iterations. In addition, FAST focuses on extracting shared features and excels in solving transfer problems across manipulated objects, whereas ITN focuses on exploring a generalized transfer approach across tasks. H-DRLN attempts to receive the current environment state as input and outputs the probabilities of new actions and source skills , reusing the subskill with the highest probability value. Although this approach incorporates the learning of new strategies, the reuse approach is very limited in terms of usage scenarios. ITN are not dependent on specific skills and can fully adapt to task changes.
-    <br>
+         The learning speed (the epoch at which the curve reaches stability) of ITN is significantly better than  No\_Transfer in both tasks.  PST assigns different stages of subskills to target tasks, with transferring any stage of subskills significantly enhancing learning efficiency. The independent nature of subskills supports cross-skill transfer in dynamic tasks. Additionally, experiments confirm that ITN can independently and autonomously learn unknown subskills in complex tasks with only partial subskills available. Comparing ITN with NIA demonstrates the superior effectiveness of integrating an Intelligent Adaptive model over a fixed value. NIA and DFS confirm the robust feature fusion capability of the feature fusion layer. ITN enhances time efficiency by around 72.22\% and 65.17\% compared to No\_Transfer in the respective tasks. 
+        <br>
   <br>
       <h3 class="title is-4"><span class="dvima"style="color: purple;">Generalization test experiment</span></h3>
     <img src="static/image/ger.png" class="interpolation-image" alt=""
         style="display: block; margin-left: auto; margin-right: auto" />
     <br>
     <span style="font-size: 125%">
-        <span style="font-weight: bold"> Several methods of transfer learning significantly outperform direct learning. </span>Although FAST performs best in early training by selecting data closer to the target domain to initializes the policy,  it is surpassed by ITN after a few dozen  iterations. In addition, FAST focuses on extracting shared features and excels in solving transfer problems across manipulated objects, whereas ITN focuses on exploring a generalized transfer approach across tasks. H-DRLN attempts to receive the current environment state as input and outputs the probabilities of new actions and source skills , reusing the subskill with the highest probability value. Although this approach incorporates the learning of new strategies, the reuse approach is very limited in terms of usage scenarios. ITNs are not dependent on specific skills and can fully adapt to task changes by considering transfer at the feature level. 
+       Curves 2 and 3 demonstrate that, although the target task and the source skills have different operational goals, the ITN can effectively utilize shared action features for transfer.This transfer, based on the action feature level, can effectively address a range of manipulation problems encountered by robots in dynamic tasks. Curve 4 shows that the robot quickly achieves high rewards when operating unseen new parts, indicating ITN's efficiency in handling  variations of the task. 
+Curve 5 demonstrates the best learning speed and the most stable learning curve throughout the training process compared to the other curves, suggesting that the multi-skill fusion strategy is the most effective, significantly improving the learning efficiency and performance of the robot manipulation task. 
     </span>
     <br>
       
