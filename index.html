@@ -37,12 +37,27 @@
     color: pink;
 }
 
-        .video-player {
+/*         .video-player {
   width: 250px;
   height: 200px;
   object-fit: cover;
-}
+} */
 
+        video {
+    width: 100%; /* 默认宽度为100% */
+  }
+  
+  @media screen and (min-width: 768px) {
+    video {
+      width: 80%; /* 在大屏幕上设置较大尺寸 */
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    video {
+      width: 60%; /* 在更大屏幕上设置更大尺寸 */
+    }
+  }
 
 
     </style>
