@@ -43,21 +43,20 @@
   object-fit: cover;
 } */
 
-        video {
-    width: 100%; /* 默认宽度为100% */
+       .column {
+  width: 25%; /* 设置每个列占据四分之一的宽度 */
+  display: inline-block;
+}
+
+.column video {
+  width: 100%; /* 视频宽度占据列的100% */
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    width: 50%; /* 在小屏幕上每个列占据一半的宽度 */
   }
-  
-  @media screen and (min-width: 768px) {
-    video {
-      width: 80%; /* 在大屏幕上设置较大尺寸 */
-    }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    video {
-      width: 60%; /* 在更大屏幕上设置更大尺寸 */
-    }
-  }
+}
 
 
     </style>
