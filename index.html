@@ -333,7 +333,28 @@ class FactoryTaskNutBoltPick(FactoryEnvNutBolt, FactoryABCTask):
         <figcaption  style="color: green;"> Epoch4 Task success rate : 91.5 %</figcaption>
     </div>
 </figure>
+                    <span style="font-size: 125%">
+                        <span style="font-weight: bold"> Feedback analysis of input information from Epoch1 to Epoch2:</span> 
+    <pre><code>
+We trained a RL policy using the provided reward function code and tracked the values of the individual components in the reward function as well as global policy metrics such as success rates and episode lengths after every 11 epochs and the maximum, mean, minimum values encountered:
+reward_pick: ['0.05', '0.06', '0.17', '0.40', '0.68', '0.72', '0.77', '0.79', '0.78', '0.79', '0.79'], Max: 0.80, Mean: 0.57, Min: 0.05 
+reward_lift: ['0.83', '0.83', '0.83', '0.83', '0.83', '0.83', '0.83', '0.84', '0.84', '0.86', '0.85'], Max: 0.86, Mean: 0.84, Min: 0.83 
+task_score: ['0.00', '0.00', '0.00', '0.02', '0.30', '0.53', '0.67', '0.77', '0.80', '0.87', '0.77'], Max: 0.91, Mean: 0.46, Min: 0.00 
+episode_lengths: ['119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00'], Max: 119.00, Mean: 119.00, Min: 119.00 
+Please carefully analyze the policy feedback and provide a new, improved reward function that can better solve the task. Some helpful tips for analyzing the policy feedback:
+    (1) If the success rate is always close to zero, it means that the sequential execution has failed to reach the last step, and you can infer that the task execution failed at the first step by analyzing the rewards for each subtask
+    (2) If the values for a certain reward component are near identical throughout, then this means RL is not able to optimize this component as it is written. You may consider
+        (a) Changing its scale or the value of its temperature parameter
+        (b) Re-writing the reward component 
+        (c) Discarding the reward component
+    (3) If some reward components' magnitude is significantly larger, then you must re-scale its value to a proper range
+Please analyze each existing reward component in the suggested manner above first, and then write the reward function code. The output of the reward function should consist of two items:
+    (1) the total reward,
+    (2) a dictionary of each individual reward component(reward dictionary for each sub-process)..
+The code output should be formatted as a python code string: "```python ... ```".
+                </code></pre>
 
+                        
   </div>
 </section>
 
