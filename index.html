@@ -186,16 +186,28 @@
  <!-- 显示加粗的线条 -->
     <hr>
 
+
+
+    <!-- Container for the abstract section -->
+<div style="max-width: 80%; margin: 0 auto; text-align: justify;">
+    <!-- Title for Abstract -->
+    <h2 style="text-align: center;">Abstract</h2>
     
-<section class="section">
+    <!-- Content of Abstract -->
+          <p>
+          Robots' working conditions and manipulation tasks are constantly changing in industrial environments. For robots to learn skills from scratch based on new task commands is a slow process that relies heavily on human assistance. Therefore, developing a mechanism that can adapt to different manipulation tasks and autonomously and quickly learn new skills can effectively address the issue of low efficiency in robot skill learning and enhance the robot's adaptive capabilities. This paper proposes a general Intelligent Transfer System (ITS) that enables robots to learn new skills rapidly and autonomously in dynamic tasks. ITS integrates Large Language Models (LLMs) with transfer reinforcement learning, leveraging LLMs' intelligence and prior skills knowledge. It can comprehend previously unseen task commands and automatically generate a process-oriented reward function based on task reward\_components for each task, enabling the autonomous learning of new skills while eliminating the need to design hierarchical sub-processes for complex tasks. In addition, an Intelligent Transfer Network (ITN) is designed within ITS to extract knowledge of relevant skills and accelerate the learning of new ones. We systematically evaluate our method in the simulation environment. The results demonstrate that it can autonomously and efficiently learn unseen skills without relying on pre-programmed behavior, achieving true creativity while improving the time efficiency of two major tasks by 72.22\% and 65.17\% compared to learning from scratch.   
+          </p>
+</div>
+
+    
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3" align="center"> Abstract </h2>
         <div class="content has-text-justified">
           <p>
-           Robots' working conditions and manipulation tasks are constantly changing in industrial environments. For robots to learn skills from scratch based on new task commands is a slow process that relies heavily on human assistance. Therefore, developing a mechanism that can adapt to different manipulation tasks and autonomously and quickly learn new skills can effectively address the issue of low efficiency in robot skill learning and enhance the robot's adaptive capabilities. This paper proposes a general Intelligent Transfer System (ITS) that enables robots to learn new skills rapidly and autonomously in dynamic tasks. ITS integrates Large Language Models (LLMs) with transfer reinforcement learning, leveraging LLMs' intelligence and prior skills knowledge. It can comprehend previously unseen task commands and automatically generate a process-oriented reward function based on task reward\_components for each task, enabling the autonomous learning of new skills while eliminating the need to design hierarchical sub-processes for complex tasks. In addition, an Intelligent Transfer Network (ITN) is designed within ITS to extract knowledge of relevant skills and accelerate learning new ones. We systematically evaluate our method in the simulation environment. The results demonstrate that it can autonomously and efficiently learn unseen skills without relying on pre-programmed behavior, achieving true creativity while improving the time efficiency of two major tasks by 72.22\% and 65.17\% compared to learning from scratch.
-              
+          Robots' working conditions and manipulation tasks are constantly changing in industrial environments. For robots to learn skills from scratch based on new task commands is a slow process that relies heavily on human assistance. Therefore, developing a mechanism that can adapt to different manipulation tasks and autonomously and quickly learn new skills can effectively address the issue of low efficiency in robot skill learning and enhance the robot's adaptive capabilities. This paper proposes a general Intelligent Transfer System (ITS) that enables robots to learn new skills rapidly and autonomously in dynamic tasks. ITS integrates Large Language Models (LLMs) with transfer reinforcement learning, leveraging LLMs' intelligence and prior skills knowledge. It can comprehend previously unseen task commands and automatically generate a process-oriented reward function based on task reward\_components for each task, enabling the autonomous learning of new skills while eliminating the need to design hierarchical sub-processes for complex tasks. In addition, an Intelligent Transfer Network (ITN) is designed within ITS to extract knowledge of relevant skills and accelerate the learning of new ones. We systematically evaluate our method in the simulation environment. The results demonstrate that it can autonomously and efficiently learn unseen skills without relying on pre-programmed behavior, achieving true creativity while improving the time efficiency of two major tasks by 72.22\% and 65.17\% compared to learning from scratch.   
           </p>
         </div>
       </div>
@@ -203,7 +215,7 @@
   </div>
 </section>
  <!-- 显示加粗的线条 -->
-    <hr>
+    <hr> -->
 
 
     
@@ -275,7 +287,7 @@ In this experiment, we list the generator's reward optimization process and comp
                 <!--   生成器对简单技能的奖励函数生成和优化过程 -->
                   <br>
             <span style="font-size: 125%">
-                <span style="font-weight: bold; color: #FFA500;"> 1. The generator 's reward function generation and optimization process for simple skills</span> 
+                <span style="font-weight: bold; color: #FFA500;"> 1. The generator's reward function generation and optimization process for simple skills.:</span> 
             </span>
             <br>
              <br>
@@ -324,7 +336,7 @@ class FactoryTaskNutBoltPick(FactoryEnvNutBolt, FactoryABCTask):
                          <span style="font-weight: bold"> Reward function optimization process    </span>: Taking the task NutBolt _ Pick task as an example, the process of the generator optimizing the reward function is shown.
                     </span>
                     <br>
-  
+
                         <figure style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
                             <div style="text-align: center;">
                                 <a href="static/1-0.91.png"><img src="static/1-0.91.png" width="200px"></a>
