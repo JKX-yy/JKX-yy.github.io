@@ -206,7 +206,47 @@
     <hr>
 
 
+<!-- 包含算法和数据集的主容器 -->
+<div style="display: flex; justify-content: space-between; align-items: flex-start; width: 1200px;">
 
+  <!-- 算法部分，固定宽度和高度 -->
+  <section class="section" style="width: 45%; margin-right: 20px;">
+    <div class="container" style="width: 100%; height: 500px;">
+      <h3 class="title">Algorithm</h3>
+      <p style="font-size: 100%">
+        ITS generates a process-oriented reward function for the new task and accelerates learning.
+      </p>
+      <figure style="display: flex; justify-content: center;">
+        <a href="伪代码.png"><img src="伪代码.png" width="250px" height="250px"></a>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 数据集部分，固定宽度和高度 -->
+  <section class="section" style="width: 45%;">
+    <div class="container" style="width: 100%; height: 500px;">
+      <h3 class="title">Dataset</h3>
+      <p style="font-size: 100%">
+        We have constructed a dataset containing 1000 instructions of task-reward components. Each instruction includes task command information and the corresponding reward components. The dataset can be accessed in the <a href="https://github.com/JKX-yy/ITN">code</a>.
+      </p>
+      <br>
+      <h2>Example of a Single Data Instruction in JSON Code Block</h2>
+      <pre><code>
+{
+  "instruction": "List all the distance calculations involved and write all the necessary judgments...",
+  "input": "Push the three small, medium, and large sized gears on the table in sequence to their designated positions.",
+  "output": [
+    "1. Calculate the distance between the jaws and the small gear...",
+    "2. Determine whether the jaws are close enough...",
+    ...
+  ]
+}
+</code></pre>
+    </div>
+  </section>
+</div>
+
+    
 
 <!-- 包含算法和数据集的主容器 -->
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
