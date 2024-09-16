@@ -295,8 +295,7 @@ In this experiment, we list the generator's reward optimization process and comp
     <!-- Environmental observation code 部分 -->
     <div style="width: 48%;">
       <p style="font-size: 100%; font-weight: bold;">Environmental observation code :</p>
-      <pre><code style="background-color: #f5f5f5; padding: 10px; border-radius: 5px;">
-...
+      <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; white-space: pre-wrap; line-height: 1.5;">
 obs_tensors = [self.fingertip_midpoint_pos,
                self.fingertip_midpoint_quat,
                self.fingertip_midpoint_linvel,
@@ -313,26 +312,24 @@ obs_tensors = [self.fingertip_midpoint_pos,
                self.medium_location_quat,
                self.large_location_pos,
                self.large_location_quat]
-...
-      </code></pre>
+      </pre>
     </div>
 
     <!-- Generated reward components 部分 -->
     <div style="width: 48%;">
       <p style="font-size: 100%; font-weight: bold;">Generated reward components :</p>
-      <pre><code style="background-color: #f5f5f5; padding: 10px; border-radius: 5px;">
+      <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; white-space: pre-wrap; line-height: 1.5;">
 1. Calculate the distance between the jaws and the small gear: distance_finger_to_small_gear
 2. Calculate the distance between the small gear and the small gear’s target location: distance_small_gear_to_small_location
 3. Calculate the distance between the jaws and the medium gear: distance_finger_to_medium_gear
 4. Calculate the distance between the medium gear and the target location of the medium gear: distance_medium_gear_to_medium_location
 5. Calculate the distance between the jaws and the large gear: distance_finger_to_large_gear
 6. Calculate the distance between the large gear and the target location of the large gear: distance_large_gear_to_large_location
-      </code></pre>
+      </pre>
     </div>
   </div>
 </div>
 
-      
 <!--  -->
       
             <br>
