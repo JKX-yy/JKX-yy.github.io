@@ -274,17 +274,17 @@ In this experiment, we list the generator's reward optimization process and comp
                 <!--   生成器对简单技能的奖励函数生成和优化过程 -->
                   <br>
             <span style="font-size: 125%">
-                <span style="font-weight: bold"> The generator 's reward function generation and optimization process for simple skills</span> 
+                <span style="font-weight: bold; color: #FFA500;"> 1. The generator 's reward function generation and optimization process for simple skills</span> 
             </span>
             <br>
-
+             <br>
             <span style="font-size: 125%">
-                 Task description: There is an M12 nut on the table, and the goal of Franka's robotic arm is first to pick up the M12 nut from the table and raise the nut to the point where the height from the table is the height of the bolt.
+                 <span style="font-weight: bold"> Task description </span> : There is an M12 nut on the table, and the goal of Franka's robotic arm is first to pick up the M12 nut from the table and raise the nut to the point where the height from the table is the height of the bolt.
             </span>
             <br>
             <br>
             <span style="font-size: 125%">
-                Environmental observation code: The environment observation code includes the pose information of the Panda arm's gripper and the object's pose information.
+                 <span style="font-weight: bold"> Environmental observation code </span> : The environment observation code includes the pose information of the Panda arm's gripper and the object's pose information.
             </span>
             <br>
 
@@ -317,7 +317,7 @@ class FactoryTaskNutBoltPick(FactoryEnvNutBolt, FactoryABCTask):
                 <!--  优化过程-->
                           <br>
                     <span style="font-size: 125%">
-                         Reward function optimization process: Taking the task NutBolt _ Pick task as an example, the process of the generator optimizing the reward function is shown.
+                         <span style="font-weight: bold"> Reward function optimization process    </span>: Taking the task NutBolt _ Pick task as an example, the process of the generator optimizing the reward function is shown.
                     </span>
                     <br>
   
@@ -345,19 +345,19 @@ class FactoryTaskNutBoltPick(FactoryEnvNutBolt, FactoryABCTask):
            
                           <br>
                     <span style="font-size: 125%">
-                        <span style="font-weight: bold"> Complex Task Reward Generation (Generator) and Component Analysis:
+                        <span style="font-weight: bold; color: #FFA500;"> 2. Complex Task Reward Generation (Generator) and Component Analysis:
                     </span>
                     <br>
 
                         <br>
                         <span style="font-size: 125%">
-                            Task description: Push the three small, medium, and large sized gears on the table in sequence to their designated positions.
+                            <span style="font-weight: bold">  Task description    </span>: Push the three small, medium, and large sized gears on the table in sequence to their designated positions.
                         </span>
                         <br>
 
                            <br>
                     <span style="font-size: 125%">
-                       Environmental observation code：
+                       <span style="font-weight: bold"> Environmental observation code： </span>
                         </span> 
        <br>
       
