@@ -187,7 +187,7 @@
     <hr>
 
 
-<!--    <section class="section">
+   <section class="section">
         <div class="container is-max-desktop">
             <!-- Abstract. -->
             <div class="columns is-centered has-text-centered">
@@ -254,80 +254,7 @@
       </pre>
     </div>
   </section>
-</div> -->
-
-<!--     修改 -->
-    <!-- Abstract Section -->
-<section class="section">
-    <div class="container is-max-desktop" style="max-width: 80%; margin: 0 auto;">
-        <!-- Abstract -->
-        <div class="columns is-centered has-text-centered">
-            <div class="column">
-                <h2 class="title is-3">Abstract</h2>
-                <div class="content has-text-justified">
-                    <p style="font-size: 125%">
-                        Robots' working conditions and manipulation tasks are constantly changing in industrial environments. For robots to learn skills from scratch based on new task commands is a slow process that relies heavily on human assistance. Therefore, developing a mechanism that can adapt to different manipulation tasks and autonomously and quickly learn new skills can effectively address the issue of low efficiency in robot skill learning and enhance the robot's adaptive capabilities. This paper proposes a general Intelligent Transfer System (ITS) that enables robots to learn new skills rapidly and autonomously in dynamic tasks. ITS integrates Large Language Models (LLMs) with transfer reinforcement learning, leveraging LLMs' intelligence and prior skills knowledge. It can comprehend previously unseen task commands and automatically generate a process-oriented reward function based on task reward\_components for each task, enabling the autonomous learning of new skills while eliminating the need to design hierarchical sub-processes for complex tasks. In addition, an Intelligent Transfer Network (ITN) is designed within ITS to extract knowledge of relevant skills and accelerate the learning of new ones. We systematically evaluate our method in the simulation environment. The results demonstrate that it can autonomously and efficiently learn unseen skills without relying on pre-programmed behavior, achieving true creativity while improving the time efficiency of two major tasks by 72.22\% and 65.17\% compared to learning from scratch.   
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 包含 Algorithm 和 Dataset 的主容器 -->
-<section class="section">
-    <div class="container is-max-desktop" style="max-width: 80%; margin: 0 auto;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <!-- Algorithm Section -->
-            <section class="section" style="flex: 1; margin-right: 20px;">
-                <div class="container is-max-desktop">
-                    <h3 class="title">Algorithm</h3>
-                    <p style="font-size: 125%;">
-                        ITS generates a process-oriented reward function for the new task and accelerates learning.
-                    </p>
-                    <figure style="display: flex; justify-content: center;">
-                        <a href="伪代码.png"><img src="伪代码.png" width="300px"></a>
-                    </figure>
-                </div>
-            </section>
-
-            <!-- Dataset Section -->
-            <section class="section" style="flex: 1;">
-                <div class="container is-max-desktop">
-                    <h3 class="title">Dataset</h3>
-                    <p style="font-size: 125%;">
-                        We have constructed a dataset containing 1000 instructions of task-reward components. Each instruction includes task command information and the corresponding reward components, as shown in the figure below. The dataset can be accessed in the <a href="https://github.com/JKX-yy/ITN">code</a>.
-                    </p>
-                    <br>
-                    <h2>Example of a Single Data Instruction in JSON Code Block</h2>
-                    <!-- 添加行间距避免代码挤在一起 -->
-                    <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; white-space: pre-wrap; line-height: 1.5;">
-<code>{
-  "instruction": "List all the distance calculations involved and write all the necessary judgments based on the input task for the robot's continuous operation task.",
-  "input": "Push the three small, medium, and large sized gears on the table in sequence to their designated positions.",
-  "output": [
-    "1. Calculate the distance between the jaws and the small gear: distance_finger_to_small_gear",
-    "2. Determine whether the jaws are close enough to the small gear: is_finger_close_small_gear",
-    "3. Calculate the distance between the small gear and the small gear's target location: distance_small_gear_to_small_location",
-    "4. Determine whether the small gear is close enough to the target location: is_small_gear_close_small_location",
-    "5. Calculate the distance between the jaws and the medium gear: distance_finger_to_medium_gear",
-    "6. Determine whether the jaws are close enough to the medium gear: is_finger_close_medium_gear",
-    "7. Calculate the distance between the medium gear and the target location of the medium gear: distance_medium_gear_to_mediun_location",
-    "8. Determine whether the medium gear is close enough to the target location: is_medium_gear_close_medium_location",
-    "9. Calculate the distance between the jaws and the large gear: distance_finger_to_large_gear",
-    "10. Determine whether the jaws are close enough to the large gear: is_finger_close_large_gear",
-    "11. Calculate the distance between the large gear and the target location of the large gear: distance_large_gear_to_large_location",
-    "12. Determine whether the large gear is close enough to the target location: is_large_gear_close_large_location"
-  ]
-}
-</code>
-                    </pre>
-                </div>
-            </section>
-        </div>
-    </div>
-</section>
-
+</div>
 
     
 <!-- 奖励函数生成实验 -->
