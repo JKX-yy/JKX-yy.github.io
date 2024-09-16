@@ -279,58 +279,7 @@ In this experiment, we list the generator's reward optimization process and comp
             </span>
             <br>
 
-<!--  -->
-<div style="width: 100%;">
-  <!-- Task description 部分 -->
-  <h2 style="font-size: 120%; font-weight: bold; color: orange;">
-    2. Complex Task Reward Generation (Generator) and Component Analysis:
-  </h2>
-  <p style="font-size: 100%;">
-    <strong>Task description :</strong> Push the three small, medium, and large sized gears on the table in sequence to their designated positions.
-  </p>
 
-  <!-- Environmental observation code 和 Generated reward components 在同一行 -->
-  <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-
-    <!-- Environmental observation code 部分 -->
-    <div style="width: 48%;">
-      <p style="font-size: 100%; font-weight: bold;">Environmental observation code :</p>
-      <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; white-space: pre-wrap; line-height: 1.5;">
-obs_tensors = [self.fingertip_midpoint_pos,
-               self.fingertip_midpoint_quat,
-               self.fingertip_midpoint_linvel,
-               self.fingertip_midpoint_angvel,
-               self.gear_small_pos,
-               self.gear_small_quat,
-               self.gear_medium_pos,
-               self.gear_medium_quat,
-               self.gear_large_pos,
-               self.gear_large_quat,
-               self.small_location_pos,
-               self.small_location_quat,
-               self.medium_location_pos,
-               self.medium_location_quat,
-               self.large_location_pos,
-               self.large_location_quat]
-      </pre>
-    </div>
-
-    <!-- Generated reward components 部分 -->
-    <div style="width: 48%;">
-      <p style="font-size: 100%; font-weight: bold;">Generated reward components :</p>
-      <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; white-space: pre-wrap; line-height: 1.5;">
-1. Calculate the distance between the jaws and the small gear: distance_finger_to_small_gear
-2. Calculate the distance between the small gear and the small gear’s target location: distance_small_gear_to_small_location
-3. Calculate the distance between the jaws and the medium gear: distance_finger_to_medium_gear
-4. Calculate the distance between the medium gear and the target location of the medium gear: distance_medium_gear_to_medium_location
-5. Calculate the distance between the jaws and the large gear: distance_finger_to_large_gear
-6. Calculate the distance between the large gear and the target location of the large gear: distance_large_gear_to_large_location
-      </pre>
-    </div>
-  </div>
-</div>
-
-<!--  -->
       
             <br>
             <span style="font-size: 125%">
