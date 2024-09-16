@@ -206,38 +206,6 @@
     <hr>
 
 
-    <div style="max-width: 100%; display: flex; justify-content: space-between;">
-    <!-- Algorithm Section -->
-    <div style="width: 48%;">
-        <h2>Algorithm</h2>
-        <p>ITS generates a process-oriented reward function for the new task and accelerates learning.</p>
-        <pre style="white-space: pre-wrap;">
-Algorithm 1 ITS
-1. Definition: Task command c, environment code e, generator g, prompts p<sub>t</sub>, fine-tuned LLaMA f, reward components f(c), source strategies {r1, r2, ... rn}.
-2. Hyperparameters: iteration N.
-3. Stage A: Process-oriented task reward generation based on reward components.
-4. for N iteration do
-5.    Sample K reward code from generator.
-        </pre>
-    </div>
-    
-    <!-- Dataset Section -->
-    <div style="width: 48%;">
-        <h2>Dataset</h2>
-        <p>We have constructed a dataset containing 1000 instructions of task-reward components. Each instruction includes task command information and the corresponding reward components, as shown in the figure below. The dataset can be accessed in the code.</p>
-        <pre style="white-space: pre-wrap;">
-{
-    "task_command": "Pick up the object",
-    "reward_components": {
-        "success_reward": 10,
-        "time_penalty": -5
-    }
-}
-        </pre>
-    </div>
-</div>
-
-    
     
 <!-- <!--     整合 -->
     <!-- 包含算法和数据集的主容器 -->
