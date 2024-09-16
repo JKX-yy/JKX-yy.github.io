@@ -387,25 +387,25 @@ The code output should be formatted as a python code string: "```python ... ```"
                        self.fingertip_midpoint_quat,  
                        self.fingertip_midpoint_linvel, 
                        self.fingertip_midpoint_angvel,
-                       self.gear_small_grasp_pos,  
-                       self.gear_small_grasp_quat,
-                       self.gear_medium_grasp_pos, 
-                       self.gear_medium_grasp_quat,
-                       self.gear_large_grasp_pos,  
-                       self.gear_large_grasp_quat,
-                       self.base_large_bolt_tip_pos,
-                       self.base_large_bolt_tip_quat,
-                       self.base_medium_bolt_tip_pos,
-                       self.base_medium_bolt_tip_quat,
-                       self.base_small_bolt_tip_pos,
-                       self.base_small_bolt_tip_quat,
+                       self.gear_small_pos,  
+                       self.gear_small_quat,
+                       self.gear_medium_pos, 
+                       self.gear_medium_quat,
+                       self.gear_large_pos,  
+                       self.gear_large_quat,
+                       self.small_location_pos,
+                       self.small_location_quat,
+                       self.medium_location_pos,
+                       self.medium_location_quat,
+                       self.large_location_pos,
+                       self.large_location_quat,
                 ]  
           ...     
                 </code></pre>
 
                           <br>
                     <span style="font-size: 125%">
-                       <span style="font-weight: bold"> Generated reward component： </span> 
+                       <span style="font-weight: bold"> Generated reward_components： </span> 
                         </span> 
        <br>
 <pre><code>
@@ -417,6 +417,56 @@ The code output should be formatted as a python code string: "```python ... ```"
     "6. Calculate the distance between the large gear and the target location of the large gear: distance_large_gear_to_large_location",
  </code></pre>
 
+                                <br>
+                    <span style="font-size: 125%">
+                       <span style="font-weight: bold"> Generated reward function： </span> 
+                        </span> 
+       <br>
+<pre><code>
+    ...
+       temp_pick = torch.tensor(0.1)
+        temp_carry = torch.tensor(0.2)
+        temp_place = torch.tensor(0.3)
+        # Calculate distances
+        distance_finger_to_small_gear = torch.norm(gear_small_pos - fingertip_midpoint_pos, p=2, dim=-1)
+        distance_small_gear_to_small_location = torch.norm(gear_small_pos - self.small_location_pos, p=2, dim=-1)
+        distance_finger_to_medium_gear = torch.norm(gear_medium_pos - fingertip_midpoint_pos, p=2, dim=-1)
+        distance_medium_gear_to_mediun_location = torch.norm(gear_medium_pos - self.medium_location_pos, p=2, dim=-1)
+        distance_finger_to_large_gear = torch.norm(gear_large_pos - fingertip_midpoint_pos, p=2, dim=-1)
+        distance_large_gear_to_large_location = torch.norm(gear_large_pos - self.large_location_pos, p=2, dim=-1)
+
+        # Define rewards for small gear
+        reward_pick_small = -distance_finger_to_small_gear
+        reward_carry_small = distance_small_gear_to_small_location
+        reward_place_small = -torch.abs(distance_small_gear_to_small_location - torch.tensor(0.0))  
+    
+        # Transform small gear rewards
+        reward_pick_small_exp = torch.exp(reward_pick_small /temp_pick)
+        reward_carry_small_exp = torch.exp(reward_carry_small /temp_carry)
+        reward_place_small_exp = torch.exp(reward_place_small /temp_place)
+        
+        # Define rewards for medium gear
+        reward_pick_medium = -distance_finger_to_medium_gear
+        reward_carry_medium = distance_medium_gear_to_mediun_location
+        reward_place_medium = -torch.abs(distance_medium_gear_to_mediun_location - torch.tensor(0.0))  # Ideally, this distance is zero
+
+        # Transform medium gear rewards
+        reward_pick_medium_exp = torch.exp(reward_pick_medium /temp_pick)
+        reward_carry_medium_exp = torch.exp(reward_carry_medium /temp_carry)
+        reward_place_medium_exp = torch.exp(reward_place_medium /temp_place)
+        
+        # Define rewards for large gear
+        reward_pick_large = -distance_finger_to_large_gear
+        reward_carry_large = distance_large_gear_to_large_location
+        reward_place_large = -torch.abs(distance_large_gear_to_large_location - torch.tensor(0.0))  # Ideally, this distance is zero
+        
+        # Transform large gear rewards
+        reward_pick_large_exp = torch.exp(reward_pick_large/temp_pick )
+        reward_carry_large_exp = torch.exp(reward_carry_large /temp_carry)
+        reward_place_large_exp = torch.exp(reward_place_large /temp_place)
+    ...
+ </code></pre>
+      
 
                         
   </div>
