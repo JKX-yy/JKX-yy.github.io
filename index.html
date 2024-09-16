@@ -341,7 +341,7 @@ class FactoryTaskNutBoltPick(FactoryEnvNutBolt, FactoryABCTask):
                         </figure>
 
 
-                    <!--复杂任务奖励生成和组件分析-->
+                  
 
           <pre><code>
 We trained a RL policy using the provided reward function code and tracked the values of the individual components in the reward function as well as global policy metrics such as success rates and episode lengths after every 11 epochs and the maximum, mean, minimum values encountered:
@@ -361,7 +361,8 @@ Please analyze each existing reward component in the suggested manner above firs
     (2) a dictionary of each individual reward component(reward dictionary for each sub-process)..
 The code output should be formatted as a python code string: "```python ... ```".
                 </code></pre>
-      
+
+        <!--复杂任务奖励生成和组件分析-->
                           <br>
                     <span style="font-size: 125%">
                         <span style="font-weight: bold; color: #FFA500;"> 2. Complex Task Reward Generation (Generator) and Component Analysis:
@@ -402,8 +403,21 @@ The code output should be formatted as a python code string: "```python ... ```"
           ...     
                 </code></pre>
 
+                          <br>
+                    <span style="font-size: 125%">
+                       <span style="font-weight: bold"> Generated reward component： </span> 
+                        </span> 
+       <br>
+<pre><code>
+    "1. Calculate the distance between the jaws and the small gear: distance_finger_to_small_gear"
+    "2. Calculate the distance between the small gear and the small gear's target location: distance_small_gear_to_small_location",
+    "3. Calculate the distance between the jaws and the medium gear: distance_finger_to_medium_gear",
+    "4. Calculate the distance between the medium gear and the target location of the medium gear: distance_medium_gear_to_mediun_location",
+    "5. Calculate the distance between the jaws and the large gear: distance_finger_to_large_gear",
+    "6. Calculate the distance between the large gear and the target location of the large gear: distance_large_gear_to_large_location",
+ </code></pre>
 
-                        
+
                         
   </div>
 </section>
