@@ -206,6 +206,43 @@
     <hr>
 
 
+
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <!-- 左侧内容 -->
+    <div style="flex: 1; margin-right: 20px;">
+        <h2>Dataset</h2>
+        <p>We have constructed a dataset containing 1000 instructions of task-reward components...</p>
+        <pre>
+        {
+            "instruction": "List all the distance calculations...",
+            "input": "Push the three small, medium...",
+            "output": [
+                "1. Calculate the distance...",
+                "2. Determine whether the jaws are...",
+                ...
+            ]
+        }
+        </pre>
+    </div>
+    
+    <!-- 右侧内容 -->
+    <div style="flex: 1;">
+        <h2>Algorithm</h2>
+        <p>ITS generates a process-oriented reward function...</p>
+        <pre>
+        Algorithm 1 ITS
+        1: Definition: Task command c, environment code e...
+        2: Hyperparameters: iteration N
+        3: for N iteration do
+        4: Sample R_k reward code from generator...
+        ...
+        </pre>
+    </div>
+</div>
+
+
+    
 <!--算法 -->
 <section class="section">
   <div class="container is-max-desktop">
