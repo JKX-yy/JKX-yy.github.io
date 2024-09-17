@@ -125,15 +125,7 @@
                         </div>
           <div class="column has-text-centered">
             <div class="publication-links">
-<!--               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2403.06420.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
+
 
               <span class="link-block">
                 <a href="https://github.com/JKX-yy/ITN"
@@ -204,7 +196,61 @@
         </div>
     </section>
 
-    <!-- 包含算法和数据集的主容器 -->
+
+    <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+            <h3 class="title">Algorithm</h3>
+              <p style="font-size: 125%;">
+        ITS generates a process-oriented reward function for the new task and accelerates learning.
+      </p>
+      <figure style="display: flex; justify-content: center;">
+         <a href="伪代码.png"><img src="伪代码.png" width="300px"></a>
+      </figure>
+      <h2 class="subtitle has-text-centered">
+         Task-Oriented Adaptive Learning of Robot Manipulation Skills
+      </h2>
+    </div>
+  </div>
+</section>
+
+      <section class="section" style="flex: 1;">
+    <div class="container is-max-desktop">
+      <h3 class="title">Dataset</h3>
+                <br>
+            <span style="font-size: 125%">
+                 We have constructed a dataset containing 1000 instructions of task-reward components. Each instruction includes task command information and the corresponding reward components, as shown in the figure below. The dataset can be accessed in the <a href="https://github.com/JKX-yy/ITN">code</a>.
+
+                </span>
+
+              <br>
+      <h2>Example of a Single Data Instruction in JSON Code Block</h2>
+        
+    <pre><code>
+{
+  "instruction": "List all the distance calculations involved and write all the necessary judgments based on the input task for the robot's continuous operation task.",
+  "input": "Push the three small, medium, and large sized gears on the table in sequence to their designated positions.",
+  "output": [
+    "1. Calculate the distance between the jaws and the small gear: distance_finger_to_small_gear",
+    "2. Determine whether the jaws are close enough to the small gear: is_finger_close_small_gear",
+    "3. Calculate the distance between the small gear and the small gear's target location: distance_small_gear_to_small_location",
+    "4. Determine whether the small gear is close enough to the target location: is_small_gear_close_small_location",
+    "5. Calculate the distance between the jaws and the medium gear: distance_finger_to_medium_gear",
+    "6. Determine whether the jaws are close enough to the medium gear: is_finger_close_medium_gear",
+    "7. Calculate the distance between the medium gear and the target location of the medium gear: distance_medium_gear_to_mediun_location",
+    "8. Determine whether the medium gear is close enough to the target location: is_medium_gear_close_medium_location",
+    "9. Calculate the distance between the jaws and the large gear: distance_finger_to_large_gear",
+    "10. Determine whether the jaws are close enough to the large gear: is_finger_close_large_gear",
+    "11. Calculate the distance between the large gear and the target location of the large gear: distance_large_gear_to_large_location",
+    "12. Determine whether the large gear is close enough to the target location: is_large_gear_close_large_location"
+  ]
+}
+                </code></pre>
+    </div>
+  </section>
+    
+    
+<!--     <!-- 包含算法和数据集的主容器 -->
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
   <!-- 算法部分，显示在左侧 -->
@@ -219,6 +265,8 @@
       </figure>
     </div>
   </section>
+
+    
 
   <!-- 数据集部分，显示在右侧 -->
   <section class="section" style="flex: 1;">
@@ -254,7 +302,7 @@
       </pre>
     </div>
   </section>
-</div>
+</div> -->
 
     
 <!-- 奖励函数生成实验 -->
