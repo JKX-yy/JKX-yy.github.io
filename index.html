@@ -219,7 +219,7 @@
       <h3 class="title">Dataset</h3>
                 <br>
             <span style="font-size: 125%">
-                 We have constructed a dataset containing 1000 instructions of task-reward_components. Each instruction includes task command information and the corresponding reward components, as shown in the figure below. The dataset can be accessed in the <a href="https://github.com/JKX-yy/ITN">code</a>.
+                 We have constructed a dataset containing 1000 instructions of task-reward_components. Each instruction includes task command information and the corresponding reward_components, as shown in the figure below. The dataset can be accessed in the <a href="https://github.com/JKX-yy/ITN">code</a>.
 
                 </span>
 
@@ -250,7 +250,7 @@ In this experiment, we list the generator's reward optimization process and comp
       
                      <br>
                     <span style="font-size: 125%">
-                         <span style="font-weight: bold"> Effective prompt for using reward_components </span> : To make the generator make full use of the reward components obtained by fine-tuning LLaMA, we give a simple example as a prompt of the use of reward_components and can replace the reward _omponents according to different tasks.
+                         <span style="font-weight: bold"> Effective prompt for using reward_components </span> : To make the generator make full use of the reward_components obtained by fine-tuning LLaMA, we give a simple example as a prompt of the use of reward_components and can replace the reward _omponents according to different tasks.
                     </span>
                     <br>
 
@@ -262,7 +262,7 @@ def compute_reward(fingertip_midpoint_pos: Tensor, nut_pos: Tensor, bolt_tip_pos
     temp_pick = torch.tensor(0.1)  # Increased to make initial progress more rewarding
     temp_place = torch.tensor(0.4)  # Increase, make this step more rewarding
 
-    # Calculate Distance Based on Reward Components
+    # Calculate Distance Based on reward_components
     distance_finger_to_nut = torch.norm(fingertip_midpoint_pos - nut_pos, p=2, dim=-1)
     distance_nut_to_bolttip = torch.norm(nut_pos - bolt_tip_pos, p=2, dim=-1)
 
@@ -277,7 +277,7 @@ def compute_reward(fingertip_midpoint_pos: Tensor, nut_pos: Tensor, bolt_tip_pos
     # Combine rewards for total reward, ensuring sequential completion by multiplication
     total_reward = reward_pick_exp  * reward_place_exp
 
-    # Reward components dictionary
+    # reward_components dictionary
     rewards_dict = {
         "reward_pick": reward_pick_exp,
         "reward_place": reward_place_exp,}
@@ -371,14 +371,14 @@ task_score: ['0.00', '0.00', '0.00', '0.02', '0.30', '0.53', '0.67', '0.77', '0.
 episode_lengths: ['119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00', '119.00'], Max: 119.00, Mean: 119.00, Min: 119.00 
 Please carefully analyze the policy feedback and provide a new, improved reward function that can better solve the task. Some helpful tips for analyzing the policy feedback:
     (1) If the success rate is always close to zero, it means that the sequential execution has failed to reach the last step, and you can infer that the task execution failed at the first step by analyzing the rewards for each subtask
-    (2) If the values for a certain reward component are near identical throughout, then this means RL is not able to optimize this component as it is written. You may consider
+    (2) If the values for a certain reward_components are near identical throughout, then this means RL is not able to optimize this component as it is written. You may consider
         (a) Changing its scale or the value of its temperature parameter
-        (b) Re-writing the reward component 
-        (c) Discarding the reward component
-    (3) If some reward components' magnitude is significantly larger, then you must re-scale its value to a proper range
-Please analyze each existing reward component in the suggested manner above first, and then write the reward function code. The output of the reward function should consist of two items:
+        (b) Re-writing the reward_components 
+        (c) Discarding the reward_components
+    (3) If some reward_components' magnitude is significantly larger, then you must re-scale its value to a proper range
+Please analyze each existing reward_components in the suggested manner above first, and then write the reward function code. The output of the reward function should consist of two items:
     (1) the total reward,
-    (2) a dictionary of each individual reward component(reward dictionary for each sub-process)..
+    (2) a dictionary of each individual reward_components(reward dictionary for each sub-process)..
 The code output should be formatted as a python code string: "```python ... ```".
                 </code></pre>
 
@@ -400,7 +400,7 @@ The code output should be formatted as a python code string: "```python ... ```"
       <!--  -->
 <div style="width: 100%;">
 
-  <!-- Environmental observation code 和 Generated reward components 在同一行 -->
+  <!-- Environmental observation code 和 Generated reward_components 在同一行 -->
   <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
 
     <!-- Environmental observation code 部分 -->
@@ -426,9 +426,9 @@ obs_tensors = [self.fingertip_midpoint_pos,
       </pre>
     </div>
 
-    <!-- Generated reward components 部分 -->
+    <!-- Generated reward_components 部分 -->
     <div style="width: 48%;">
-      <p style="font-size: 100%; font-weight: bold;">Generated reward components :</p>
+      <p style="font-size: 100%; font-weight: bold;">Generated reward_components :</p>
       <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; white-space: pre-wrap; line-height: 1.5;">
 1. Calculate the distance between the jaws and the small gear: distance_finger_to_small_gear
 2. Calculate the distance between the small gear and the small gear’s target location: distance_small_gear_to_small_location
@@ -509,7 +509,7 @@ obs_tensors = [self.fingertip_midpoint_pos,
       </figure>
                        <br>
                       <span style="font-size: 125%">
-                          Compared with the reward function designed by humans, the other two methods are superior. By comparing the performance of Eureka and the generator, since our method introduces a reward_components with a human experience level, which is more reliable than Eureka's random generation of rewards, and the generated code is more readable, we call Process-oriented reward function generation based on reward component guidance.
+                          Compared with the reward function designed by humans, the other two methods are superior. By comparing the performance of Eureka and the generator, since our method introduces a reward_components with a human experience level, which is more reliable than Eureka's random generation of rewards, and the generated code is more readable, we call Process-oriented reward function generation based on reward_components guidance.
                     </span>
                     <br>
                         
