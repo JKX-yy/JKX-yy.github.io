@@ -256,7 +256,7 @@ In this experiment, we list the generator's reward optimization process and comp
                     <br>
 
                               <pre><code>
-                 @torch.jit.script
+@torch.jit.script
 def compute_reward(fingertip_midpoint_pos: Tensor, nut_pos: Tensor, bolt_tip_pos: Tensor) -> Tuple[Tensor, Dict[str, Tensor]]:
     
     # Adjusted temperature parameters for reward transformations
