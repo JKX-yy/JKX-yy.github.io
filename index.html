@@ -424,6 +424,25 @@ Please analyze each existing reward_components in the suggested manner above fir
 The code output should be formatted as a python code string: "```python ... ```".
                 </code></pre>
 
+
+
+
+
+      
+
+        <!-- 生成失败-->
+                          <br>
+                    <span style="font-size: 125%">
+                         <span style="font-weight: bold"> Reward function generation failure    </span>: The generator may generate attributes that are not present in the observation space as part of the design of the reward function. At this point, the cause of the erroneous generation needs to be identified and fed back in a timely manner, and a new reward function needs to be regenerated.ion and feedback on the cause of the error generation. </span>
+                    <br>
+
+
+                      <pre><code>
+ self.rew_buf[:], self.rew_dict = compute_reward(self.fingertip_midpoint_pos, self.gear_small_pos, self.gear_small_target_pos, self.gear_medium_pos, self.gear_medium_target_pos, self.gear_large_pos, self.gear_large_target_pos)
+AttributeError: 'FactoryTaskGearsPickPlaceGPT' object has no attribute 'gear_small_target_pos'
+                </code></pre>
+      
+      
         <!--复杂任务奖励生成和组件分析-->
                           <br>
                     <span style="font-size: 125%">
